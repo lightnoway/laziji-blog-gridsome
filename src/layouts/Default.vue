@@ -9,7 +9,9 @@
         <g-link class="nav__link" to="/about/">About</g-link>
       </nav>
     </header>
-    <slot/>
+    <Header/>
+    <left-nav />
+    <slot />
   </div>
 </template>
 
@@ -23,9 +25,10 @@ query {
 
 <style>
 body {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  margin:0;
-  padding:0;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
   line-height: 1.5;
 }
 
@@ -48,3 +51,13 @@ body {
   margin-left: 20px;
 }
 </style>
+<script>
+import Header from "@/components/main/header.vue";
+import LeftNav from "@/components/main/leftNav.vue";
+export default {
+  components: {
+    LeftNav,
+    Header
+  },
+};
+</script>
