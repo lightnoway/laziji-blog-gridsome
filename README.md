@@ -17,3 +17,5 @@ This is the project you get when you run `gridsome create new-project`.
 ### 问题记录
 - [x] 路径不生效:`import LeftNav from "@/components/leftNav.vue";`
   - 写错地址了 仔细对照一下
+
+- [ ] 导航点击区域

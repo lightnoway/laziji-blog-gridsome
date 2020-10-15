@@ -9,9 +9,16 @@
         <g-link class="nav__link" to="/about/">About</g-link>
       </nav>
     </header>
-    <Header/>
-    <left-nav />
-    <slot />
+    <Header />
+    <el-row>
+      <el-col :span="6">
+        <left-nav />
+      </el-col>
+      <el-col :span="18">
+        <slot />
+      </el-col>
+    </el-row>
+    <Footer />
   </div>
 </template>
 
@@ -53,11 +60,13 @@ body {
 </style>
 <script>
 import Header from "@/components/main/header.vue";
+import Footer from "@/components/main/footer.vue";
 import LeftNav from "@/components/main/leftNav.vue";
 export default {
   components: {
     LeftNav,
-    Header
+    Header,
+    Footer
   },
 };
 </script>
