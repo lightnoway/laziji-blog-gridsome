@@ -127,7 +127,7 @@
 </template>
 <page-query>
 query ($page: Int) {
-  blogs:allStrapiPost(perPage: 2, page: $page) @paginate {
+  blogs:allStrapiBlog(perPage: 2, page: $page) @paginate {
     pageInfo {
       perPage
       totalPages

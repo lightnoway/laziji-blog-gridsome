@@ -10,9 +10,9 @@ module.exports = {
     {
       use: '@gridsome/source-strapi',
       options: {
-        apiURL: 'http://localhost:1336',
+        apiURL: 'http://ec2-18-163-84-125.ap-east-1.compute.amazonaws.com:1337',
         queryLimit: 1000, // Defaults to 100
-        contentTypes: ['post'],
+        contentTypes: ['blog'],
         // singleTypes: ['impressum'],
         // Possibility to login with a Strapi user,
         // when content types are not publicly available (optional).
@@ -24,7 +24,7 @@ module.exports = {
     }
   ],
   templates: {
-    StrapiPost: [{ 
+    StrapiBlog: [{
       path: "/blog/:id",
       component: './src/templates/Blog.vue'
     }]
