@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <Layout>
     <h2>Post</h2>
     <div>{{$page.blog.title}}</div>
     <div>{{$page.blog.content}}</div>
-  </div>
+  </Layout>
 </template>
 <page-query>
 query ($id:ID!){
@@ -12,14 +12,5 @@ query ($id:ID!){
     title
     content
   }
-  # blogs:allStrapiPost{
-  #   edges{
-  #     node{
-  #       title
-  #       content
-  #       id
-  #     }
-  #   }
-  # }
 }
 </page-query>

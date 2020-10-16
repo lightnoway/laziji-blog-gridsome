@@ -3,11 +3,15 @@ import {
   Col, Row,
   Menu, MenuItem,
   Button,
-  Divider
+  Divider,
+  Card,
+  Pagination
 } from 'element-ui';
 [
   Col, Row,
   Menu, MenuItem,
   Button,
-  Divider
+  Divider,
+  Card,
+  Pagination
 ].forEach(comp => Vue.use(comp)); 

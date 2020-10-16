@@ -57,6 +57,11 @@
     <el-button>button</el-button>
   </section>
 </template>
+<style scoped>
+.page-header{
+  margin-bottom: 2em;
+}
+</style>
 <script>
 export default {
   data() {
