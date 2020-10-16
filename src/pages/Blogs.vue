@@ -101,9 +101,8 @@
             @current-change="onPageChange"
             :current-page="$page.blogs.pageInfo.currentPage"
             :page-size="$page.blogs.pageInfo.perPage"
-            :total="$page.blogs.pageInfo.totalPages"
-          >
-          </el-pagination>
+            :page-count="$page.blogs.pageInfo.totalPages"
+          />
         </div>
       </div>
 
@@ -123,10 +122,11 @@
     </div>
     <!-- <h1>博客列表</h1>
     <p>{{ $page.blogs.pageInfo }}</p> -->
+    <Pager :info="$page.blogs.pageInfo" />
   </Layout>
 </template>
 <page-query>
-query ($page: Int!) {
+query ($page: Int) {
   blogs:allStrapiPost(perPage: 2, page: $page) @paginate {
     pageInfo {
       perPage
@@ -146,14 +146,20 @@ query ($page: Int!) {
 </page-query>
 
 <script>
+import { Pager } from "gridsome";
+
 export default {
   metaInfo: {
     title: "博客列表",
   },
+  components: { Pager },
   methods: {
     onPageChange(target) {
-      console.log("pageChange", target);
-      this.$router.push(`/blogs/${target}`);
+      if (target === 1) {
+        this.$router.push(`/blogs`);
+      } else {
+        this.$router.push(`/blogs/${target}`);
+      }
     },
   },
 };
