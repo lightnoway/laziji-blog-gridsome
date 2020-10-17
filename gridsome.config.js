@@ -10,7 +10,7 @@ module.exports = {
     {
       use: '@gridsome/source-strapi',
       options: {
-        apiURL: 'http://ec2-18-163-84-125.ap-east-1.compute.amazonaws.com:1337',
+        apiURL: process.env.API_URL,
         queryLimit: 1000, // Defaults to 100
         contentTypes: ['blog'],
         // singleTypes: ['impressum'],
