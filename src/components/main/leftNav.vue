@@ -2,7 +2,7 @@
   <el-menu class="leftNav">
     <el-menu-item index="4">
       <i class="el-icon-setting"></i>
-      <g-link slot="title" to="/new">最新动态</g-link>
+      <g-link slot="title" to="/gists">最新动态</g-link>
     </el-menu-item>
     <el-menu-item index="4">
       <i class="el-icon-setting"></i>

@@ -17,10 +17,10 @@ module.exports = function (api) {
         typeName
       })
       return getAll().then(({ data: items }) => {
-        console.log("=======",typeName,items[0]);
+        // console.log("=======", typeName, items[0]);
         for (const item of items) {
           if (item.files) {
-            item.files = Object.entries(item.files);
+            item.files = Object.values(item.files);
           }
           collection.addNode({
             ...item
