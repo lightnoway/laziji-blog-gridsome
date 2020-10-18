@@ -6,7 +6,7 @@
     </el-menu-item>
     <el-menu-item index="4">
       <i class="el-icon-setting"></i>
-      <g-link slot="title" to="/social">社交圈</g-link>
+      <g-link slot="title" to="/socials">社交圈</g-link>
     </el-menu-item>
     <el-menu-item index="4">
       <i class="el-icon-setting"></i>
@@ -14,12 +14,13 @@
     </el-menu-item>
     <el-menu-item index="4">
       <i class="el-icon-setting"></i>
-      <g-link slot="title" to="/project">开源项目</g-link>
+      <g-link slot="title" to="/repos">开源项目</g-link>
     </el-menu-item>
   </el-menu>
 </template>
 <style scoped>
 .leftNav{
   border-right: none;
+  margin-right: 1em;
 }
 </style>

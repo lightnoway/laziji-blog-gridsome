@@ -1,5 +1,6 @@
 <template>
   <Layout>
+    <h2>博客列表</h2>
     <div style="min-height: 600px">
       <el-card v-if="false" shadow="never" style="margin-bottom: 20px">
         <!-- <el-input
@@ -122,7 +123,7 @@
     </div>
     <!-- <h1>博客列表</h1>
     <p>{{ $page.blogs.pageInfo }}</p> -->
-    <Pager :info="$page.blogs.pageInfo" />
+    <!-- <Pager :info="$page.blogs.pageInfo" /> -->
   </Layout>
 </template>
 <page-query>

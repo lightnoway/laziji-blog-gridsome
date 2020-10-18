@@ -1,5 +1,6 @@
 <template>
   <Layout>
+    <h2>Gists</h2>
     <el-card
       shadow="hover"
       v-for="(item, index) in items"
@@ -7,17 +8,12 @@
       style="margin-bottom: 20px"
     >
       <div slot="header">
-        <el-row>
-          <el-col :span="16">
-            <span>
-              {{ item.description }}
-            </span>
-            {{ item.created_at }}
-          </el-col>
-        </el-row>
+        <span>
+          {{ item.description }}
+        </span>
       </div>
       <div style="font-sie: 0.9rem; line-height: 1.5; color: #606c71">
-        最近更新 {{ item.updateTime }}
+        最近更新 {{ item.updated_at }}
       </div>
       <div
         style="
@@ -30,27 +26,31 @@
         <dl>
           <dt>files:</dt>
           <dd v-for="file in item.files" :key="file.filename">
-            <a :href="file.raw_url" target="_blank"> {{file.filename}}</a>
-            </dd>
+            <a :href="file.raw_url" target="_blank"> {{ file.filename }}</a>
+          </dd>
         </dl>
       </div>
     </el-card>
     <div style="text-align: center">
-      <!-- <el-pagination
-        @current-change="list"
-        background
+      <el-pagination
         layout="prev, pager, next"
-        :current-page.sync="query.page"
-        :page-size="query.pageSize"
-        :total="query.pageNumber * query.pageSize"
-      >
-      </el-pagination> -->
+        @current-change="onPageChange"
+        :current-page="$page.allGists.pageInfo.currentPage"
+        :page-count="$page.allGists.pageInfo.totalPages"
+      />
     </div>
   </Layout>
 </template>
 <page-query>
-query {
-  allGists{
+query($page:Int) {
+  allGists(
+    perPage:2
+    page:$page
+    )@paginate{
+    pageInfo {
+      totalPages
+      currentPage
+    }
     edges{
       node{
         id
@@ -88,6 +88,15 @@ export default {
   computed: {
     items() {
       return this.$page.allGists.edges.map(({ node }) => node);
+    },
+  },
+  methods: {
+    onPageChange(target) {
+      if (target === 1) {
+        this.$router.push(`/gists`);
+      } else {
+        this.$router.push(`/gists/${target}`);
+      }
     },
   },
 };
