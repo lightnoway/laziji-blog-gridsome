@@ -93,9 +93,9 @@ export default {
   methods: {
     onPageChange(target) {
       if (target === 1) {
-        this.$router.push(`/index`);
+        this.$router.push(`/`);
       } else {
-        this.$router.push(`/index/${target}`);
+        this.$router.push(`/${target}`);
       }
     },
   },

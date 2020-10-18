@@ -25,7 +25,7 @@ query {
 <script>
 export default {
   metaInfo: {
-    title: "About us",
+    title: "社交圈",
   },
   computed: {
     items() {
